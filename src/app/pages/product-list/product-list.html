@@ -1,24 +1,26 @@
-<!-- <div class="container">
+<div class="container">
   <section class="pl-section">
-    <table>
+    <table class="pl-table">
       <thead>
-        <th>s.no</th>
-        <th>Id</th>
-        <th>Title</th>
-        <th>edit</th>
-        <th>delete</th>
+        <tr>
+          <th>s.no</th>
+          <th>Id</th>
+          <th>Title</th>
+          <th>edit</th>
+          <th>delete</th>
+        </tr>
       </thead>
       <tbody>
-        @if(productList.length){ @for(product of productList ; track $index){
+        @for (product of productList$ | async; track $index) {
         <tr>
           <td>{{ $index + 1 }}</td>
           <td>{{ product.product_id }}</td>
           <td>{{ product.title }}</td>
-          <td>edit</td>
-          <td>delete</td>
+          <td>Edit</td>
+          <td>Delete</td>
         </tr>
-        } }
+        }
       </tbody>
     </table>
   </section>
-</div> -->
+</div>

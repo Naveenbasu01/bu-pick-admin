@@ -1,31 +1,15 @@
-
-
+/* You can add global styles to this file, and also import other style files */
+@use 'assets/scss/utils.scss' as util;
+@use 'assets/scss/mixin.scss' as mix;
+@use 'assets/scss/responsive.scss' as res;
 @use "bootstrap/scss/bootstrap";
-
 @use '@angular/material' as mat;
+html, body { height: 100%; }
+body { margin: 0;  font-family: "Amazon Ember", Arial, sans-serif; }
 
-html {
-  @include mat.theme((
-    color: (
-      primary: mat.$azure-palette,
-      tertiary: mat.$blue-palette,
-    ),
-    typography: Roboto,
-    density: 0,
+:root {
+  @include mat.bottom-sheet-overrides((
+    container-text-color: black,
+    container-background-color: white,
   ));
 }
-
-body {
-
-  color-scheme: light;
-
-
-  background-color: var(--mat-sys-surface);
-  color: var(--mat-sys-on-surface);
-  font: var(--mat-sys-body-medium);
-
-  margin: 0;
-}
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
