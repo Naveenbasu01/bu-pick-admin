@@ -1,9 +1,9 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { FireStore } from '../../shared/services/fire-store';
 import { Observable } from 'rxjs';
-import { AsyncPipe } from '@angular/common';
 import { product } from '../../shared/constants/product.constant';
 import { Routes } from '../../shared/services/routes';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-product-list',
@@ -23,6 +23,9 @@ export default class ProductList implements OnInit {
 
   getReq() {
     this.productList$ = this.fireStoreService.getItems();
+    this.productList$.subscribe((data) => {
+        console.log(data)
+    })
   }
   postReq() {
     this.fireStoreService.addProduct(product);
